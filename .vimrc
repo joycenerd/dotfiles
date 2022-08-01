@@ -3,6 +3,7 @@ filetype off                  " required
 set encoding=utf-8
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/home/zchin/.local/lib/python3.9/site-packages/powerline/bindings/vim
 call vundle#begin()
 " " alternatively, pass a path where Vundle should install plugins
 " "call vundle#begin('~/some/path/here')
@@ -91,9 +92,9 @@ let g:ctrlp_clear_cache_on_exit = 0
 
 python3 import sys
 " sys.path.append("/home/gridsan/mnadeem/anaconda3/lib/python3.7/site-packages")
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+" python3 from powerline.vim import setup as powerline_setup
+" python3 powerline_setup()
+" python3 del powerline_setup
 set showtabline=2 " Always display the tabline, even if there is only one tab
 nnoremap <F9> :!%:p<Enter><Enter>
 set iskeyword-=_
