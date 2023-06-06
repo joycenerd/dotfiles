@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'fisadev/vim-isort'
+Plugin 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -66,14 +67,20 @@ set autoindent
 set smartindent
 set mouse=a
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set background=dark
 set hlsearch
 set incsearch
 set laststatus=2
 set backspace=indent,eol,start
 syntax enable
-""colorscheme nord
-"
+
+"vim theme
+set termguicolors
+set background=dark
+colorscheme catppuccin_mocha
+"highlight LineNr ctermfg=yellow
+hi linenr guifg=#FFFBAC
+
+
 let g:ale_enabled = 1
 let g:ale_fixers = ["autopep8", 'isort', "remove_trailing_lines", 'trim_whitespace']
 let g:ale_linters = {
