@@ -30,6 +30,9 @@ mkdir -p "${BACKUP_DIR}"
 if [ -d "$HOME_CACHE" ]; then
     echo "Backing up existing cache directory..."
     mv "$HOME_CACHE" "$BACKUP_DIR/"
+elif [ -L "$HOME_CACHE" ]; then
+    echo "Removing existing symbolic link..."
+    rm "$HOME_CACHE"
 fi
 
 # Create new cache directory
