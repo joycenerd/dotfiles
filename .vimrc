@@ -162,17 +162,21 @@ hi linenr guifg=#FFFBAC
     " }
 " }
 
-" vim airline configuration
+" vim airline configuration - tabline only (top bar with file icons)
 " {
     let g:airline_powerline_fonts = 1
-    let g:airline_layout = 'powerline'
-    "let g:airline_theme = 'base16_gruvbox_dark_hard'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#fnamemod = ':t'
     let g:airline#extensions#tabline#left_sep = ''
     let g:airline#extensions#tabline#right_sep = ''
     let g:airline#extensions#tabline#left_alt_sep = ''
     let g:airline#extensions#tabline#right_alt_sep = ''
+
+    " Disable statusline - use simple built-in statusline instead
+    let g:airline_disable_statusline = 1
+
+    " Simple custom statusline (bottom bar)
+    set statusline=%f\ %h%w%m%r\ %=%l/%L,%c\ %P
 " }
 
 " toggle terminal
