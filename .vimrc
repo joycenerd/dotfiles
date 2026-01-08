@@ -75,6 +75,12 @@ set backspace=indent,eol,start
 set wrap
 set linebreak
 syntax enable
+
+" Quality of life improvements
+set signcolumn=yes              " Always show sign column for ALE/git markers
+set clipboard=unnamedplus       " System clipboard integration
+set path+=**                    " Recursive directory search
+set wildmenu                    " Enhanced command-line completion
 " auto read file while file change outside vim
 set autoread
 " Restore default behaviour when leaving Vim.
@@ -89,12 +95,22 @@ autocmd VimLeave * silent !stty ixon
   set copyindent
 "}
 
-"vim theme
+" vim theme
 set background=dark
 " let g:tokyonight_style = 'night' " available: night, storm
 " let g:tokyonight_enable_italic = 1
 " let g:tokyonight_transparent_background = 0
 " colorscheme tokyonight
+
+" Custom visual improvements (inspired by minimal aesthetic)
+hi Normal guibg=#061a1a guifg=Cyan
+hi Comment guifg=White
+hi Constant guifg=White
+hi Function guifg=White
+hi Statement guifg=Red gui=bold
+hi Type guifg=Red gui=bold
+hi Error guibg=Red guifg=White
+hi MatchParen guibg=Blue
 hi linenr guifg=#FFFBAC
 
 " tab {
