@@ -75,6 +75,12 @@ set backspace=indent,eol,start
 set wrap
 set linebreak
 syntax enable
+
+" Quality of life improvements
+set signcolumn=yes              " Always show sign column for ALE/git markers
+set clipboard=unnamedplus       " System clipboard integration
+set path+=**                    " Recursive directory search
+set wildmenu                    " Enhanced command-line completion
 " auto read file while file change outside vim
 set autoread
 " Restore default behaviour when leaving Vim.
@@ -89,12 +95,22 @@ autocmd VimLeave * silent !stty ixon
   set copyindent
 "}
 
-"vim theme
+" vim theme
 set background=dark
 " let g:tokyonight_style = 'night' " available: night, storm
 " let g:tokyonight_enable_italic = 1
 " let g:tokyonight_transparent_background = 0
 " colorscheme tokyonight
+
+" Custom visual improvements (inspired by minimal aesthetic)
+hi Normal guibg=#061a1a guifg=Cyan
+hi Comment guifg=White
+hi Constant guifg=White
+hi Function guifg=White
+hi Statement guifg=Red gui=bold
+hi Type guifg=Red gui=bold
+hi Error guibg=Red guifg=White
+hi MatchParen guibg=Blue
 hi linenr guifg=#FFFBAC
 
 " tab {
@@ -146,17 +162,21 @@ hi linenr guifg=#FFFBAC
     " }
 " }
 
-" vim airline configuration
+" vim airline configuration - tabline only (top bar with file icons)
 " {
     let g:airline_powerline_fonts = 1
-    let g:airline_layout = 'powerline'
-    "let g:airline_theme = 'base16_gruvbox_dark_hard'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#fnamemod = ':t'
     let g:airline#extensions#tabline#left_sep = ''
     let g:airline#extensions#tabline#right_sep = ''
     let g:airline#extensions#tabline#left_alt_sep = ''
     let g:airline#extensions#tabline#right_alt_sep = ''
+
+    " Disable statusline - use simple built-in statusline instead
+    let g:airline_disable_statusline = 1
+
+    " Simple custom statusline (bottom bar)
+    set statusline=%f\ %h%w%m%r\ %=%l/%L,%c\ %P
 " }
 
 " toggle terminal
